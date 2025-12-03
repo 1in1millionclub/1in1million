@@ -34,7 +34,7 @@ export default function CTASection() {
           </div>
           <div className="flex w-full max-w-[497px] flex-col items-center justify-center gap-12">
             <div className="flex items-center justify-start gap-4">
-              <div className="relative flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#37322F] px-12 py-[6px] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] transition-colors hover:bg-[#2A2520]">
+              <div className="relative flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#37322F] px-12 py-1.5 shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] transition-colors hover:bg-[#2A2520]">
                 <div className="absolute top-0 left-0 h-[41px] w-44 bg-linear-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
                 <div className="flex flex-col justify-center font-sans text-[13px] leading-5 font-medium text-white">
                   Know More
