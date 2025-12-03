@@ -23,7 +23,7 @@ export default function CTASection() {
 
         <div className="relative z-20 flex w-full max-w-[586px] flex-col items-center justify-start gap-6 overflow-hidden rounded-lg px-6 py-5 md:py-8">
           <div className="flex flex-col items-start justify-start gap-3 self-stretch">
-            <div className="flex flex-col justify-center self-stretch text-center font-sans text-3xl leading-tight font-semibold tracking-tight text-[#49423D] md:text-5xl md:leading-[56px]">
+            <div className="flex flex-col justify-center self-stretch text-center font-sans text-3xl leading-tight font-semibold tracking-tight text-[#49423D] md:text-5xl md:leading-14">
               Become the <br /> One in One Million.
             </div>
             <div className="self-stretch text-center font-sans text-base leading-7 font-medium text-[#605A57]">
