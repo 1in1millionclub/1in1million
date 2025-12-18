@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function CTASection() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center gap-2 overflow-hidden">
@@ -32,15 +34,14 @@ export default function CTASection() {
               learning platform taught only by real entrepreneurs.
             </div>
           </div>
-          <div className="flex w-full max-w-[497px] flex-col items-center justify-center gap-12">
-            <div className="flex items-center justify-start gap-4">
-              <div className="bg-foreground relative flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-full px-12 py-1.5 shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] transition-colors hover:bg-[#2A2520]">
-                <div className="absolute top-0 left-0 h-[41px] w-44 bg-linear-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                <div className="text-primary-foreground font-monument flex flex-col justify-center text-[13px] leading-5 font-medium">
-                  Know More
-                </div>
-              </div>
+          <div className="bg-foreground relative mt-5 flex h-10 items-center justify-center overflow-hidden rounded-full px-6 py-2 sm:h-11 sm:px-8 sm:py-1.5 md:h-12 md:px-10 lg:px-12">
+            <div className="text-primary-foreground font-monument flex flex-col justify-center text-sm leading-5 font-medium sm:text-base md:text-[15px]">
+              Know More
             </div>
+            <Link
+              href="/programmes/three-month-flagship-entrepreneurship"
+              className="absolute inset-0 z-10"
+            />
           </div>
         </div>
       </div>

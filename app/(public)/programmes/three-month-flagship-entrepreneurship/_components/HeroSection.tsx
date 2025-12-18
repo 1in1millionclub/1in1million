@@ -7,7 +7,7 @@ export function HeroSection() {
       <div className="relative flex h-full min-h-[70svh] w-full flex-col justify-center gap-3 px-6 py-20 sm:gap-4 md:items-center md:gap-5 lg:gap-6">
         <div className="flex flex-col justify-center gap-4 sm:gap-5 md:items-center md:gap-6 lg:gap-8">
           <h1 className="text-foreground font-monument w-full max-w-[800px] text-left text-3xl font-normal tracking-wide sm:text-center sm:text-4xl md:px-0 md:text-5xl lg:text-7xl">
-            Euntraprunes Community
+            Entrepreneurs Community
             <br />
             <span className="font-bold text-[#FE6168]">
               Built for the Ambitious
