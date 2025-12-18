@@ -21,10 +21,10 @@ export function OutcomesSection() {
             icon={<CheckCircle className="h-3.5 w-3.5" />}
             text="90-Day Transformation"
           />
-          <h2 className="text-foreground font-display text-center text-2xl leading-tight font-semibold tracking-tight md:text-4xl lg:text-5xl">
+          <h2 className="text-foreground font-monument text-center text-2xl leading-tight text-balance md:text-4xl lg:text-5xl">
             What You Will Achieve in 90 Days
           </h2>
-          <p className="text-muted-foreground font-body text-center text-base md:text-lg">
+          <p className="text-muted-foreground font-mont text-center text-base md:text-lg">
             By the end of the programme, you will:
           </p>
 
@@ -32,17 +32,17 @@ export function OutcomesSection() {
             {outcomes.map((outcome, index) => (
               <div
                 key={index}
-                className="bg-card border-border flex items-start gap-3 rounded-lg border p-4"
+                className="bg-card border-border flex items-start justify-between gap-3 rounded-lg border p-4"
               >
-                <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
-                <span className="text-foreground font-body font-medium">
+                <span className="text-foreground font-mont font-medium">
                   {outcome}
                 </span>
+                <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
               </div>
             ))}
           </div>
 
-          <p className="text-foreground bg-primary/5 font-body mt-4 rounded-full px-6 py-3 text-center text-lg font-semibold">
+          <p className="text-foreground bg-primary/5 font-monument mt-4 rounded-full px-6 py-3 text-center text-lg">
             This is REAL transformation — not hype.
           </p>
         </div>

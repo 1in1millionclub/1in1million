@@ -25,7 +25,7 @@ export function CurriculumSection() {
             icon={<BookOpen className="h-3.5 w-3.5" />}
             text="Curriculum Overview"
           />
-          <h2 className="text-foreground font-display text-center text-2xl leading-tight font-semibold tracking-tight md:text-4xl lg:text-5xl">
+          <h2 className="text-foreground font-monument text-center text-2xl leading-tight text-balance md:text-4xl lg:text-5xl">
             12 Comprehensive Modules
           </h2>
 
@@ -35,17 +35,17 @@ export function CurriculumSection() {
                 key={index}
                 className="bg-card border-border hover:border-primary/50 flex items-center gap-3 rounded-lg border p-4 transition-colors"
               >
-                <span className="bg-primary text-primary-foreground font-body flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold">
+                <span className="bg-primary text-primary-foreground font-monument flex size-8 shrink-0 items-center justify-center rounded-full text-sm">
                   {index + 1}
                 </span>
-                <span className="text-foreground font-body text-sm font-medium">
+                <span className="text-foreground font-mont text-sm font-medium">
                   {module}
                 </span>
               </div>
             ))}
           </div>
 
-          <p className="text-muted-foreground font-body mt-4 text-center text-base">
+          <p className="text-foreground font-monument mt-4 text-center text-base">
             Each module = videos + case studies + project + live Q&A
           </p>
         </div>

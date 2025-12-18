@@ -24,7 +24,7 @@ export function ProgrammePricingSection() {
             icon={<IndianRupee className="h-3.5 w-3.5" />}
             text="Transparent Pricing"
           />
-          <h2 className="text-center font-serif text-2xl leading-tight font-normal text-[#49423D] md:text-4xl lg:text-5xl">
+          <h2 className="font-monument tex-foreground text-center text-2xl leading-tight text-balance md:text-4xl lg:text-5xl">
             Investment in Your Future
           </h2>
         </div>
@@ -36,7 +36,7 @@ export function ProgrammePricingSection() {
                 {Array.from({ length: 200 }).map((_, i) => (
                   <div
                     key={i}
-                    className="h-4 origin-top-left -rotate-45 self-stretch outline-[0.5px] outline-offset-[-0.25px] outline-[rgba(3,7,18,0.08)]"
+                    className="h-4 origin-top-left -rotate-45 self-stretch outline-[0.5px] outline-offset-[-0.25px] outline-[rgba(55,50,47,0.5)]"
                   ></div>
                 ))}
               </div>
@@ -48,19 +48,19 @@ export function ProgrammePricingSection() {
                 <div className="flex flex-col items-start justify-start gap-2 self-stretch">
                   <div className="flex flex-col items-start justify-start gap-1">
                     <div className="flex items-center justify-center gap-1">
-                      <span className="text-muted-foreground font-body text-sm">
+                      <span className="text-muted-foreground font-mont text-sm">
                         ₹30,250
                       </span>
-                      <span className="text-muted-foreground font-body text-xs">
+                      <span className="text-muted-foreground font-mont text-xs">
                         + GST
                       </span>
                     </div>
-                    <div className="relative flex h-[60px] items-center font-serif text-5xl leading-[60px] font-normal text-[#37322F]">
+                    <div className="font-monument text-foreground relative flex h-[60px] items-center text-5xl leading-[60px] font-normal">
                       <span className="flex items-center transition-all duration-500">
                         ₹35,695
                       </span>
                     </div>
-                    <div className="font-sans text-sm font-medium text-[#847971]">
+                    <div className="font-mont text-muted-foreground text-sm font-medium">
                       All inclusive
                     </div>
                   </div>
@@ -89,15 +89,15 @@ export function ProgrammePricingSection() {
                           />
                         </svg>
                       </div>
-                      <div className="flex-1 font-sans text-[12.5px] leading-5 font-normal text-[rgba(55,50,47,0.80)]">
+                      <div className="font-mont text-muted-foreground flex-1 text-[12.5px] leading-5 font-normal">
                         {feature}
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="relative flex items-center justify-center self-stretch overflow-hidden rounded-[99px] bg-[#37322F] px-4 py-[10px] shadow-[0px_2px_4px_rgba(55,50,47,0.12)]">
+                <div className="bg-foreground text-background font-monument relative flex items-center justify-center self-stretch overflow-hidden rounded-[99px] px-4 py-[10px] shadow-[0px_2px_4px_rgba(55,50,47,0.5)]">
                   <div className="absolute top-[-0.5px] left-0 h-[41px] w-full bg-linear-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                  <div className="flex flex-col justify-center font-sans text-[13px] leading-5 font-medium text-[#FBFAF9]">
+                  <div className="flex flex-col justify-center text-[13px] leading-5 font-medium">
                     Join the Community{" "}
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export function ProgrammePricingSection() {
                 {Array.from({ length: 200 }).map((_, i) => (
                   <div
                     key={i}
-                    className="h-4 origin-top-left -rotate-45 self-stretch outline-[0.5px] outline-offset-[-0.25px] outline-[rgba(3,7,18,0.08)]"
+                    className="h-4 origin-top-left -rotate-45 self-stretch outline-[0.5px] outline-offset-[-0.25px] outline-[rgba(55,50,47,0.5)]"
                   ></div>
                 ))}
               </div>
@@ -116,10 +116,10 @@ export function ProgrammePricingSection() {
           </div>
         </div>
         <div className="space-y-4 pt-10 text-center">
-          <h3 className="text-foreground font-body text-lg font-semibold">
+          <h3 className="text-foreground font-mont text-lg font-semibold">
             Why This Pricing Makes Sense
           </h3>
-          <ul className="text-muted-foreground font-body space-y-2 text-sm">
+          <ul className="text-muted-foreground font-mont space-y-2 text-sm">
             <li>International programs cost ₹80,000–₹2,00,000</li>
             <li>Most Indian programs give no access to real entrepreneurs</li>
             <li>
@@ -127,7 +127,7 @@ export function ProgrammePricingSection() {
               studies
             </li>
           </ul>
-          <p className="text-foreground font-body font-medium">
+          <p className="text-foreground font-mont font-medium">
             One of the highest-value entrepreneurship programs in India.
           </p>
         </div>

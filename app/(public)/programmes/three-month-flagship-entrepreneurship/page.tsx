@@ -11,7 +11,7 @@ import { WhoIsThisFor } from "./_components/WhoIsThisFor";
 
 export default function ThreeMonthFlagshipEntrepreneurship() {
   return (
-    <div className="flex w-full flex-col items-center justify-start px-2 pt-20 pr-0 pb-16 pl-0 sm:px-4 sm:pt-20 sm:pr-0 sm:pb-12 sm:pl-0 md:px-8 md:pb-16 lg:px-0">
+    <div className="flex w-full flex-col items-center justify-start">
       <HeroSection />
       <ProblemSection />
       <USPSection />

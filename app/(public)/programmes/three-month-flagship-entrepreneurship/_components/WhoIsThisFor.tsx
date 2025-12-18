@@ -25,20 +25,20 @@ export function WhoIsThisFor() {
             icon={<Target className="h-3.5 w-3.5" />}
             text="Who This Is For"
           />
-          <h2 className="text-foreground font-display text-center text-2xl leading-tight font-semibold tracking-tight md:text-4xl lg:text-5xl">
+          <h2 className="text-foreground font-monument text-center text-2xl leading-tight tracking-tight text-balance md:text-4xl lg:text-5xl">
             Is this community right for you?
           </h2>
 
           <div className="mt-4 grid w-full grid-cols-1 gap-8 md:grid-cols-2">
             <div className="bg-card border-border rounded-lg border p-6">
-              <h3 className="text-foreground font-body mb-4 text-lg font-semibold">
+              <h3 className="text-foreground font-monument mb-4 text-lg">
                 If you are:
               </h3>
               <ul className="space-y-3">
                 {profiles.map((profile, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
-                    <span className="text-muted-foreground font-body">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+                    <span className="text-muted-foreground font-mont">
                       {profile}
                     </span>
                   </li>
@@ -47,14 +47,14 @@ export function WhoIsThisFor() {
             </div>
 
             <div className="bg-card border-border rounded-lg border p-6">
-              <h3 className="text-foreground font-body mb-4 text-lg font-semibold">
+              <h3 className="text-foreground font-monument mb-4 text-lg">
                 And you want:
               </h3>
               <ul className="space-y-3">
                 {wants.map((want, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
-                    <span className="text-muted-foreground font-body">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+                    <span className="text-muted-foreground font-mont">
                       {want}
                     </span>
                   </li>
@@ -63,7 +63,7 @@ export function WhoIsThisFor() {
             </div>
           </div>
 
-          <p className="text-foreground font-body mt-4 text-center text-xl font-semibold">
+          <p className="text-foreground font-monument mt-4 text-center text-xl">
             THIS COMMUNITY IS FOR YOU.
           </p>
         </div>

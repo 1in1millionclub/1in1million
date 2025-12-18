@@ -76,8 +76,9 @@ export function USPSection() {
             }
             text="What Makes Us Different"
           />
-          <h2 className="text-foreground font-display text-center text-2xl leading-tight font-semibold tracking-tight md:text-4xl lg:text-5xl">
-            Our Unique Selling Points
+          <h2 className="text-foreground font-monument text-center text-2xl leading-tight tracking-tight md:text-4xl lg:text-5xl">
+            Our Unique <br />
+            Selling Points
           </h2>
 
           <div className="mt-4 grid w-full grid-cols-1 gap-6 md:grid-cols-2">
@@ -89,10 +90,10 @@ export function USPSection() {
                 <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-full">
                   <usp.icon className="text-primary h-6 w-6" />
                 </div>
-                <h3 className="text-foreground font-body text-lg font-semibold">
+                <h3 className="text-foreground font-monument text-lg">
                   {usp.title}
                 </h3>
-                <p className="text-muted-foreground font-body">
+                <p className="text-muted-foreground font-mont">
                   {usp.description}
                 </p>
               </div>

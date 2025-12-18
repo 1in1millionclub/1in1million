@@ -73,10 +73,10 @@ export default function FAQSection() {
       <div className="flex flex-1 flex-col items-start justify-start gap-6 px-4 py-16 md:px-12 md:py-20 lg:flex-row lg:gap-12">
         {/* Left Column - Header */}
         <div className="flex w-full flex-col items-start justify-center gap-4 lg:flex-1 lg:py-5">
-          <div className="flex w-full flex-col justify-center font-sans text-4xl leading-tight font-semibold tracking-tight text-[#49423D] md:leading-[44px]">
+          <div className="font-monument text-foreground flex w-full flex-col justify-center text-4xl leading-tight md:leading-[44px]">
             Frequently Asked Questions
           </div>
-          <div className="w-full font-sans text-base leading-7 font-normal text-[#605A57]">
+          <div className="font-mont text-muted-foreground w-full text-base leading-7 font-normal">
             Explore your data, build your dashboard,
             <br className="hidden md:block" />
             bring your team together.
@@ -99,7 +99,7 @@ export default function FAQSection() {
                     className="flex w-full items-center justify-between gap-5 px-5 py-[18px] text-left transition-colors duration-200 hover:bg-[rgba(73,66,61,0.02)]"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex-1 font-sans text-base leading-6 font-medium text-[#49423D]">
+                    <div className="font-mont text-foreground flex-1 text-base leading-6 font-medium">
                       {item.question}
                     </div>
                     <div className="flex items-center justify-center">
@@ -116,7 +116,7 @@ export default function FAQSection() {
                       isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="px-5 pb-[18px] font-sans text-sm leading-6 font-normal text-[#605A57]">
+                    <div className="font-mont text-muted-foreground px-5 pb-[18px] text-sm leading-6 font-normal">
                       {item.answer}
                     </div>
                   </div>
