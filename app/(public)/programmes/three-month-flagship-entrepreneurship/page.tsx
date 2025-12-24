@@ -1,13 +1,11 @@
 import FooterSection from "@/components/footer-section";
 import { CTASection } from "./_components/CTASection";
-import { CurriculumSection } from "./_components/CurriculumSection";
-import FAQSection from "./_components/FAQSection";
 import { HeroSection } from "./_components/HeroSection";
-import { OutcomesSection } from "./_components/OutcomesSection";
-import { ProgrammePricingSection } from "./_components/PricingSection";
+import { HowYouWillLearn } from "./_components/HowYouWillLearn";
+import { LearningTopicsSection } from "./_components/LearningTopicsSection";
 import { ProblemSection } from "./_components/ProblemSection";
+import { TransformationSection } from "./_components/TransformationSection";
 import { USPSection } from "./_components/USPSection";
-import { WhoIsThisFor } from "./_components/WhoIsThisFor";
 
 export default function ThreeMonthFlagshipEntrepreneurship() {
   return (
@@ -15,12 +13,11 @@ export default function ThreeMonthFlagshipEntrepreneurship() {
       <HeroSection />
       <ProblemSection />
       <USPSection />
-      <WhoIsThisFor />
-      <OutcomesSection />
-      <CurriculumSection />
-      <ProgrammePricingSection />
-      <FAQSection />
+      <HowYouWillLearn />
+      <LearningTopicsSection />
       <CTASection />
+      {/* <TestimonialsCalloutSection /> */}
+      <TransformationSection />
       <FooterSection />
     </div>
   );

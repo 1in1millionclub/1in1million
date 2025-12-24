@@ -1,56 +1,51 @@
 import Badge from "@/components/badge";
-import {
-  BookOpen,
-  Calendar,
-  FileText,
-  Heart,
-  Rocket,
-  Users,
-  Video,
-} from "lucide-react";
 
-const usps = [
+const mentors = [
   {
-    icon: Rocket,
-    title: "Learn from REAL Entrepreneurs",
-    description:
-      'Not "coaches". Not "gurus". Only founders who have built, scaled, and lived the journey.',
+    image: "",
+    name: "Shazul MK",
+    title: "CEO, Fast Logistics",
   },
   {
-    icon: Video,
-    title: "Cinematic, High-End Learning",
-    description:
-      "Kerala's best production team. Crystal-clear lessons. Engaging storytelling. Real workday documentation.",
+    image: "",
+    name: "PC Musthafa",
+    title: "Global CEO, ID Fresh Foods IIM Alumni",
   },
   {
-    icon: Calendar,
-    title: "Micro-Learning That Fits Your Life",
-    description:
-      "Only 30–40 minutes per day. No long lectures. No theory overload.",
+    image: "",
+    name: "Abdul Nazer",
+    title: "CO Founder & Co-Chairman, ID Fresh Foods",
   },
   {
-    icon: FileText,
-    title: "Practical Systems & SOPs",
-    description:
-      "Everything you learn can be applied instantly to your business with ready-to-use templates.",
+    image: "",
+    name: "Dr. Roy John",
+    title:
+      "Senior Consultant & Partner@ConSoul Associates LLP (Business Consultants) Ex Director, Holy Grace Academy of Management Study. IIMK Alumni",
   },
   {
-    icon: Users,
-    title: "Live Q&A With Experts",
-    description:
-      "Ask questions directly. Get clarity instantly from the entrepreneurs and professors.",
+    image: "",
+    name: "Sajith Ansar",
+    title: "Founder and CEO, Unlimits, Director at Idea Spice Design",
   },
   {
-    icon: BookOpen,
-    title: "Case Studies (Harvard Inspired)",
-    description:
-      "Real entrepreneurs' stories turned into structured business frameworks you can apply.",
+    image: "",
+    name: "Rustum Usman",
+    title: "Consulting Manager, Cognizant, IIMK Alumni",
   },
   {
-    icon: Heart,
-    title: "Values + Character Building",
-    description:
-      "Become the entrepreneur who succeeds — without losing integrity.",
+    image: "",
+    name: "Yasar Trico",
+    title: "Managing Director, Trico Trading",
+  },
+  {
+    image: "",
+    name: "Riyas Hakkim",
+    title: "India’s First Emotional Sales Coach",
+  },
+  {
+    image: "",
+    name: "Dr. PA Kabeer",
+    title: "Managing Director, Dr. Bee & Almas Hospitals",
   },
 ];
 
@@ -74,27 +69,23 @@ export function USPSection() {
                 />
               </svg>
             }
-            text="What Makes Us Different"
+            text="Learn From the Best"
           />
           <h2 className="text-foreground font-monument text-center text-2xl leading-tight tracking-tight md:text-4xl lg:text-5xl">
-            Our Unique <br />
-            Selling Points
+            Your Mentors at 1in1Million
           </h2>
 
           <div className="mt-4 grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-            {usps.map((usp, index) => (
+            {mentors.map((mentor, index) => (
               <div
                 key={index}
                 className="bg-card border-border flex flex-col gap-3 rounded-lg border p-6 transition-shadow hover:shadow-lg"
               >
-                <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-full">
-                  <usp.icon className="text-primary h-6 w-6" />
-                </div>
                 <h3 className="text-foreground font-monument text-lg">
-                  {usp.title}
+                  {mentor.name}
                 </h3>
                 <p className="text-muted-foreground font-mont">
-                  {usp.description}
+                  {mentor.title}
                 </p>
               </div>
             ))}

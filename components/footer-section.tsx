@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 export default function FooterSection() {
   return (
     <div className="flex w-full flex-col items-start justify-start py-10">
@@ -22,101 +22,13 @@ export default function FooterSection() {
           </div>
 
           <div className="flex items-start justify-start gap-4">
-            <div className="relative h-6 w-6 overflow-hidden">
-              <div className="absolute top-0 left-0 flex h-6 w-6 items-center justify-center">
-                <FaInstagram />
-              </div>
-            </div>
-
-            <div className="relative h-6 w-6 overflow-hidden">
-              <div className="absolute top-0 left-0 flex h-6 w-6 items-center justify-center">
-                <FaFacebook />
-              </div>
-            </div>
-
-            <div className="relative h-6 w-6 overflow-hidden">
-              <div className="absolute top-0 left-0 flex h-6 w-6 items-center justify-center">
-                <FaYoutube />
-              </div>
-            </div>
+            <a
+              href="https://www.instagram.com/1in1m.club/"
+              className="flex size-6 items-center justify-center"
+            >
+              <FaInstagram />
+            </a>
           </div>
-        </div>
-
-        {/* Navigation Links */}
-        <div className="flex flex-col flex-wrap items-start justify-start gap-6 self-stretch p-4 sm:flex-row sm:justify-between md:gap-8 md:p-8">
-          {/* Product Column */}
-
-          {/* Product Column */}
-          {/* <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
-            <div className="self-stretch text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-mont">
-              Product
-            </div>
-            <div className="flex flex-col justify-end items-start gap-2">
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Features
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Pricing
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Integrations
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Real-time Previews
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Multi-Agent Coding
-              </div>
-            </div>
-          </div> */}
-
-          {/* Company Column */}
-          {/* <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
-            <div className="text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-mont">
-              Company
-            </div>
-            <div className="flex flex-col justify-center items-start gap-2">
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                About us
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Our team
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Careers
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Brand
-              </div>
-              <div className="text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Contact
-              </div>
-            </div>
-          </div> */}
-
-          {/* Resources Column */}
-          {/* <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
-            <div className="text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-mont">
-              Resources
-            </div>
-            <div className="flex flex-col justify-center items-center gap-2">
-              <div className="self-stretch text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Terms of use
-              </div>
-              <div className="self-stretch text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                API Reference
-              </div>
-              <div className="self-stretch text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Documentation
-              </div>
-              <div className="self-stretch text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Community
-              </div>
-              <div className="self-stretch text-muted-foreground text-sm font-normal leading-5 font-mont cursor-pointer hover:text-[#37322F] transition-colors">
-                Support
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
 
