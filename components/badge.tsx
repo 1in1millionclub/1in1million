@@ -10,7 +10,7 @@ export default function Badge({
       <div className="text-primary-foreground relative flex h-3.5 w-3.5 items-center justify-center overflow-hidden">
         {icon}
       </div>
-      <div className="font-mont text-primary-foreground flex flex-col justify-center text-center text-xs leading-3 font-medium">
+      <div className="font-mont text-primary-foreground mt-0.5 flex flex-col justify-center text-center text-xs leading-3 font-medium">
         {text}
       </div>
     </div>
