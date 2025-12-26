@@ -31,7 +31,7 @@ export function CTASection() {
 *Age:* ${formData.age}
 *Phone Number:* ${formData.phoneNumber}
 *What's doing right now:* ${formData.currentActivity}
-*Graduation:* ${formData.graduation}
+${formData.graduation ? `*Graduation:* ${formData.graduation}` : null}
 *Email ID:* ${formData.email}`;
 
     const encodedMessage = encodeURIComponent(message);
@@ -152,7 +152,7 @@ export function CTASection() {
                   htmlFor="graduation"
                   className="text-foreground font-mont text-sm font-medium"
                 >
-                  Graduation <span className="text-red-500">*</span>
+                  Graduation
                 </label>
                 <input
                   type="text"
@@ -160,7 +160,6 @@ export function CTASection() {
                   name="graduation"
                   value={formData.graduation}
                   onChange={handleInputChange}
-                  required
                   className="bg-background border-border text-foreground font-mont rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
                   placeholder="e.g., B.Tech, MBA, etc."
                 />
