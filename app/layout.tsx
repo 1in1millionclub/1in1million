@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import { mont, monument } from "@/fonts/fonts";
 import type { Metadata } from "next";
 import type React from "react";
@@ -18,7 +19,10 @@ export default function RootLayout({
       lang="en"
       className={`${mont.variable} ${monument.variable} dark antialiased`}
     >
-      <body className="font-mont antialiased">{children}</body>
+      <body className="font-mont antialiased">
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

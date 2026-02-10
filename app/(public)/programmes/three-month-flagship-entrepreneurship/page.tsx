@@ -5,14 +5,13 @@ import { HowYouWillLearn } from "./_components/HowYouWillLearn";
 import { LearningTopicsSection } from "./_components/LearningTopicsSection";
 import { ProblemSection } from "./_components/ProblemSection";
 import { TransformationSection } from "./_components/TransformationSection";
-import { USPSection } from "./_components/USPSection";
 
 export default function ThreeMonthFlagshipEntrepreneurship() {
   return (
     <div className="flex w-full flex-col items-center justify-start">
       <HeroSection />
       <ProblemSection />
-      <USPSection />
+      {/* <USPSection /> */}
       <HowYouWillLearn />
       <LearningTopicsSection />
       <CTASection />
