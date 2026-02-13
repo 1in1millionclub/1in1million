@@ -11,7 +11,7 @@ export function CTASection() {
     age: "",
     phoneNumber: "",
     currentActivity: "",
-    graduation: "",
+    helpNeeded: "",
     email: "",
   });
 
@@ -31,7 +31,7 @@ export function CTASection() {
 *Age:* ${formData.age}
 *Phone Number:* ${formData.phoneNumber}
 *What's doing right now:* ${formData.currentActivity}
-${formData.graduation ? `*Graduation:* ${formData.graduation}` : null}
+${formData.helpNeeded ? `*Help Needed:* ${formData.helpNeeded}` : ""}
 *Email ID:* ${formData.email}`;
 
     const encodedMessage = encodeURIComponent(message);
@@ -44,7 +44,7 @@ ${formData.graduation ? `*Graduation:* ${formData.graduation}` : null}
       age: "",
       phoneNumber: "",
       currentActivity: "",
-      graduation: "",
+      helpNeeded: "",
       email: "",
     });
   };
@@ -149,19 +149,22 @@ ${formData.graduation ? `*Graduation:* ${formData.graduation}` : null}
 
               <div className="flex flex-col gap-2">
                 <label
-                  htmlFor="graduation"
+                  htmlFor="helpNeeded"
                   className="text-foreground font-mont text-sm font-medium"
                 >
-                  Graduation
+                  What help you need from us?{" "}
+                  <span className="text-muted-foreground text-[10px] font-normal italic">
+                    (Optional)
+                  </span>
                 </label>
-                <input
-                  type="text"
-                  id="graduation"
-                  name="graduation"
-                  value={formData.graduation}
+                <textarea
+                  id="helpNeeded"
+                  name="helpNeeded"
+                  value={formData.helpNeeded}
                   onChange={handleInputChange}
-                  className="bg-background border-border text-foreground font-mont rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
-                  placeholder="e.g., B.Tech, MBA, etc."
+                  rows={2}
+                  className="bg-background border-border text-foreground font-mont resize-none rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
+                  placeholder="Tell us how we can assist you..."
                 />
               </div>
 
