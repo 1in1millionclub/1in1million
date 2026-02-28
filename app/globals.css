@@ -133,10 +133,6 @@ a {
   transition: color 0.3s ease;
 }
 
-img {
-  transition: transform 0.3s ease;
-}
-
 @keyframes spotlight {
   0% {
     opacity: 0;
