@@ -9,7 +9,7 @@ export function CTAForm() {
     phoneNumber: "",
     age: "",
     location: "",
-    currentActivity: "",
+    expectations: "",
   });
 
   const handleInputChange = (
@@ -22,14 +22,14 @@ export function CTAForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const message = `*New Application - 3 Month Flagship Entrepreneurship Programme*
+    const message = `*1in1M Value Driven School of Business Application*
 
 *Name:* ${formData.name}
 *Email ID:* ${formData.email}
 *Phone Number:* ${formData.phoneNumber}
 *Location:* ${formData.location}
 *Age:* ${formData.age}
-*What's doing right now:* ${formData.currentActivity}`;
+*What's your expectations from us::* ${formData.expectations}`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/918137981287?text=${encodedMessage}`;
@@ -40,7 +40,7 @@ export function CTAForm() {
       age: "",
       phoneNumber: "",
       location: "",
-      currentActivity: "",
+      expectations: "",
       email: "",
     });
   };
@@ -126,15 +126,16 @@ export function CTAForm() {
 
       <div className="flex flex-col gap-2">
         <label
-          htmlFor="currentActivity"
+          htmlFor="expectations"
           className="text-foreground font-mont text-sm font-medium"
         >
-          What are you doing right now? <span className="text-red-500">*</span>
+          What&apos;s your expectations from us?{" "}
+          <span className="text-red-500">*</span>
         </label>
         <textarea
-          id="currentActivity"
-          name="currentActivity"
-          value={formData.currentActivity}
+          id="expectations"
+          name="expectations"
+          value={formData.expectations}
           onChange={handleInputChange}
           required
           rows={2}

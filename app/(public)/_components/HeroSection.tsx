@@ -3,6 +3,7 @@ import { BackgroundBeams } from "@/components/background-beams";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { CTAForm } from "./CTAForm";
 
 const mentors = [
   {
@@ -203,7 +204,7 @@ export function HeroSection() {
           </motion.div>
         </div>
       </div>
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -217,7 +218,7 @@ export function HeroSection() {
           </span>
         </h2>
         <CTAForm />
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 }
