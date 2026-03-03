@@ -6,11 +6,6 @@ import Image from "next/image";
 
 const mentors = [
   {
-    image: "/mentros/shazul-mk.webp",
-    name: "Shazul MK",
-    title: "CEO, Fast Logistics",
-  },
-  {
     image: "/mentros/pc-musthafa.webp",
     name: "PC Musthafa",
     title: "Global CEO, ID Fresh Foods, IIM Alumni",
@@ -20,6 +15,12 @@ const mentors = [
     name: "Abdul Nazer",
     title: "CO Founder & Co-Chairman, ID Fresh Foods",
   },
+  {
+    image: "/mentros/shazul-mk.webp",
+    name: "Shazul MK",
+    title: "CEO, Fast Logistics",
+  },
+
   {
     image: "/mentros/roy-john.jpg",
     name: "Dr. Roy John",
