@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 export default function FooterSection() {
   return (
-    <div className="flex w-full flex-col items-start justify-start py-10">
+    <div className="flex w-full flex-col items-start justify-start border-t py-10">
       <div className="flex h-auto flex-col items-stretch justify-between self-stretch pt-0 pr-0 pb-8 md:flex-row">
         <div className="flex h-auto flex-col items-start justify-start gap-8 p-4 md:p-8">
           <div className="flex items-center justify-start gap-3 self-stretch">

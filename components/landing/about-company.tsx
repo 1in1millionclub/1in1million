@@ -3,7 +3,7 @@ import Badge from "../badge";
 
 export default function AboutCompany() {
   return (
-    <div className="flex w-full flex-col items-center justify-center border-t border-b border-[rgba(55,50,47,0.5)]">
+    <div className="flex w-full flex-col items-center justify-center border-b border-[rgba(55,50,47,0.5)]">
       <div className="flex items-center justify-center gap-6 self-stretch border-b border-[rgba(55,50,47,0.5)] px-4 py-8 sm:px-6 sm:py-12 md:px-24 md:py-16">
         <div className="flex w-full max-w-[586px] flex-col items-center justify-start gap-3 overflow-hidden rounded-lg px-4 py-4 sm:gap-4 sm:px-6 sm:py-5">
           <Badge
