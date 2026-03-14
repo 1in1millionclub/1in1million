@@ -1,8 +1,18 @@
 "use client";
 
+import { submitApplication } from "@/app/actions/application";
+import { Loader2 } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
-export function CTAForm() {
+export function CTAForm({
+  plan,
+  onSuccess,
+}: {
+  plan: string;
+  onSuccess?: () => void;
+}) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,30 +29,58 @@ export function CTAForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const message = `*1in1M Value Driven School of Business Application*
+    try {
+      const result = await submitApplication({
+        name: formData.name,
+        email: formData.email,
+        age: parseInt(formData.age),
+        phone_number: formData.phoneNumber,
+        location: formData.location,
+        expectations: formData.expectations,
+        plan: plan,
+      });
+
+      if (!result.success) {
+        toast.error(result.error || "Failed to submit application");
+        return;
+      }
+
+      toast.success("Application submitted successfully!");
+
+      const message = `*1in1M Application - ${plan}*
 
 *Name:* ${formData.name}
 *Email ID:* ${formData.email}
 *Phone Number:* ${formData.phoneNumber}
 *Location:* ${formData.location}
 *Age:* ${formData.age}
-*What's your expectations from us::* ${formData.expectations}`;
+*Plan Selected:* ${plan}
+*Expectations:* ${formData.expectations}`;
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/918137981287?text=${encodedMessage}`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/918137981287?text=${encodedMessage}`;
 
-    window.open(whatsappUrl, "_blank");
-    setFormData({
-      name: "",
-      age: "",
-      phoneNumber: "",
-      location: "",
-      expectations: "",
-      email: "",
-    });
+      window.open(whatsappUrl, "_blank");
+      onSuccess?.();
+
+      setFormData({
+        name: "",
+        age: "",
+        phoneNumber: "",
+        location: "",
+        expectations: "",
+        email: "",
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -84,52 +122,74 @@ export function CTAForm() {
           placeholder="Enter your email address"
         />
       </div>
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="age"
-          className="text-foreground font-mont text-sm font-medium"
-        >
-          Age <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="number"
-          id="age"
-          name="age"
-          value={formData.age}
-          onChange={handleInputChange}
-          required
-          min="1"
-          max="100"
-          className="bg-background border-border text-foreground font-mont rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
-          placeholder="Enter your age"
-        />
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="flex flex-col gap-2">
+          <label
+            htmlFor="age"
+            className="text-foreground font-mont text-sm font-medium"
+          >
+            Age <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            value={formData.age}
+            onChange={handleInputChange}
+            required
+            min="1"
+            max="100"
+            className="bg-background border-border text-foreground font-mont rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
+            placeholder="Age"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label
+            htmlFor="phoneNumber"
+            className="text-foreground font-mont text-sm font-medium"
+          >
+            Phone Number <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleInputChange}
+            required
+            className="bg-background border-border text-foreground font-mont rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
+            placeholder="Phone number"
+          />
+        </div>
       </div>
 
       <div className="flex flex-col gap-2">
         <label
-          htmlFor="phoneNumber"
+          htmlFor="location"
           className="text-foreground font-mont text-sm font-medium"
         >
-          Phone Number <span className="text-red-500">*</span>
+          Location <span className="text-red-500">*</span>
         </label>
         <input
-          type="tel"
-          id="phoneNumber"
-          name="phoneNumber"
-          value={formData.phoneNumber}
+          type="text"
+          id="location"
+          name="location"
+          value={formData.location}
           onChange={handleInputChange}
           required
           className="bg-background border-border text-foreground font-mont rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
-          placeholder="Enter your phone number"
+          placeholder="Enter your location (City/State)"
         />
       </div>
 
       <div className="flex flex-col gap-2">
         <label
           htmlFor="expectations"
-          className="text-foreground font-mont text-sm font-medium"
+          className="text-foreground font-mont text-sm font-medium text-balance"
         >
-          What&apos;s your expectations from us?{" "}
+          What&apos;s your expectations from 1in1million Value Driven School of Business:
           <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -146,9 +206,17 @@ export function CTAForm() {
 
       <button
         type="submit"
-        className="font-monument text-foreground mt-4 flex items-center justify-center gap-2 rounded-full bg-[#FE6168] px-6 py-3 text-sm font-medium transition-opacity hover:opacity-90"
+        disabled={isSubmitting}
+        className="font-monument text-foreground mt-4 flex items-center justify-center gap-2 rounded-full bg-[#FE6168] px-6 py-4 text-sm font-medium transition-opacity hover:opacity-90 disabled:opacity-50"
       >
-        Submit
+        {isSubmitting ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" />
+            Submitting...
+          </>
+        ) : (
+          "Submit Application"
+        )}
       </button>
     </form>
   );

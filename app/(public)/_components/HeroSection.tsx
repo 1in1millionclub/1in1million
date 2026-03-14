@@ -3,7 +3,8 @@ import { BackgroundBeams } from "@/components/background-beams";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import { CTAForm } from "./CTAForm";
+import { CurriculumSection } from "./CurriculumSection";
+import { PlansSection } from "./PlansSection";
 
 const mentors = [
   {
@@ -204,21 +205,8 @@ export function HeroSection() {
           </motion.div>
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-        className="border-border flex min-h-dvh w-full flex-col items-center justify-center gap-10 border-t px-4 py-20 md:px-24 md:py-16"
-      >
-        <h2 className="text-foreground font-monument w-full max-w-[1000px] text-center text-3xl font-normal tracking-wide sm:text-4xl md:px-0 md:text-5xl lg:text-7xl">
-          Admissions are not open yet <br />
-          <span className="font-bold text-[#FE6168]">
-            You can pre-book here
-          </span>
-        </h2>
-        <CTAForm />
-      </motion.div>
+      <CurriculumSection />
+      <PlansSection />
     </div>
   );
 }
