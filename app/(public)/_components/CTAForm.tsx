@@ -189,7 +189,8 @@ export function CTAForm({
           htmlFor="expectations"
           className="text-foreground font-mont text-sm font-medium text-balance"
         >
-          What&apos;s your expectations from 1in1million Value Driven School of Business:
+          What&apos;s your expectations from 1in1million Value Driven School of
+          Business:
           <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -200,7 +201,7 @@ export function CTAForm({
           required
           rows={2}
           className="bg-background border-border text-foreground font-mont resize-none rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-[#FE6168] focus:outline-none"
-        
+          placeholder="Enter your expectations"
         />
       </div>
 
