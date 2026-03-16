@@ -17,11 +17,10 @@ const plans = [
   {
     name: "Basic Plan",
     icon: <Star className="h-6 w-6" />,
-    description:
-      "For those who want structured clarity on the 12 business fundamentals.",
     features: [
-      "Exclusive masterclasses in each domain led by 1in1M mentors",
-      "Outcome-based assessments for clear learning",
+      "Exclusive masterclasses in each business domain led by 1in1M mentors",
+      "Outcome-based assessments to ensure practical understanding",
+      "Structured curriculum designed for clear foundational business learning",
     ],
     color: "from-blue-500/20 to-blue-600/20",
     borderColor: "border-blue-500/30",
@@ -30,12 +29,13 @@ const plans = [
   {
     name: "Advanced Plan",
     icon: <Rocket className="h-6 w-6" />,
-    description: "For those who want guided learning with practical exposure.",
+
     features: [
-      "Sessions + Assessments",
-      "Live mentor sessions",
-      "Case study learning",
-      "Capstone projects",
+      "Exclusive masterclasses in each domain led by 1in1M mentors",
+      "Outcome-based assessments for measurable learning",
+      "Live mentor sessions for clarity and deeper understanding",
+      "Real company case studies across different business functions",
+      "Capstone project to ensure practical application of everything learned",
     ],
     color: "from-purple-500/20 to-purple-600/20",
     borderColor: "border-purple-500/30",
@@ -44,16 +44,19 @@ const plans = [
   {
     name: "Professional Plan",
     icon: <Shield className="h-6 w-6" />,
-    highlight: "Major Focus - Aspiring Entrepreneurs",
+    // highlight: "Major Focus - Aspiring Entrepreneurs",
     description:
-      "For serious aspiring entrepreneurs who want long-term support while building clarity and direction.",
+      "This plan is for those who want learning + community + long-term growth ecosystem.",
     features: [
-      "Sessions + Assessments",
-      "Live mentor sessions",
-      "Case study learning",
-      "Capstone projects",
-      "Lifetime access",
-      "Dedicated academician for doubt clearing (on-call support)",
+      "Exclusive masterclasses in each domain led by 1in1M mentors",
+      "Outcome-based assessments for measurable learning",
+      "Live mentor sessions for deeper clarity",
+      "Case studies of successful companies across key business functions",
+      "Capstone project to apply your knowledge",
+      "Dedicated academician for ongoing support and doubt clearing",
+      "On-call guidance support",
+      "Lifetime community access",
+      "Access to meetups, mastermind events, business trips, and industrial visits",
     ],
     color: "from-[#FE6168]/20 to-[#FE6168]/40",
     borderColor: "border-[#FE6168]/50",
@@ -63,19 +66,22 @@ const plans = [
   {
     name: "Execution Plan",
     icon: <Zap className="h-6 w-6" />,
-    highlight: "Only for Business Owners",
-    description: "Not a course. A growth partnership.",
+    highlight: "For Serious Business Owners",
+
     features: [
-      "Sessions + Assessments",
-      "Live mentor sessions",
-      "Case study learning",
-      "Capstone projects",
-      "Lifetime access",
-      "Dedicated academician for doubt clearing (on-call support)",
-      "Networking with serious business owners",
-      "1:1 mentor involvement",
-      "Direct growth advisory in their real company",
-      "Strategic execution support",
+      "Exclusive masterclasses in each domain led by 1in1M mentors",
+      "Outcome-based assessments for measurable learning",
+      "Live mentor sessions for deeper clarity",
+      "Case studies of successful companies across key business functions",
+      "Capstone project to apply your knowledge",
+      "Dedicated academician for ongoing support and doubt clearing",
+      "On-call guidance support",
+      "Lifetime community access",
+      "Access to meetups, mastermind events, business trips, and industrial visits",
+      "Networking with top business owners and 1in1M Mentors.",
+      "1:1 mentor involvement for personalized guidance",
+      "Direct growth advisory & consultation for your actual company",
+      "Strategic execution support to build and scale your business from 1in1M",
     ],
     color: "from-amber-500/20 to-amber-600/20",
     borderColor: "border-amber-500/30",
@@ -115,7 +121,7 @@ export function PlansSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`bg-card/50 flex flex-col rounded-[2rem] border p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 ${plan.borderColor} ${
+              className={`bg-card/50 flex flex-col rounded-4xl border p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 ${plan.borderColor} ${
                 plan.popular
                   ? "relative shadow-[0_0_40px_-10px_rgba(254,97,104,0.2)]"
                   : ""
@@ -145,9 +151,6 @@ export function PlansSection() {
                     </p>
                   )}
                 </div>
-                {/* <p className="text-muted-foreground font-mont text-sm leading-relaxed opacity-70">
-                  {plan.description}
-                </p> */}
               </div>
 
               <div className="grow space-y-4">
@@ -163,6 +166,9 @@ export function PlansSection() {
                     </span>
                   </div>
                 ))}
+                <p className="text-muted-foreground font-mont text-sm leading-relaxed opacity-70">
+                  {plan.description}
+                </p>
               </div>
 
               <button
