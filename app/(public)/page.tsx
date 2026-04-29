@@ -1,5 +1,17 @@
 import FooterSection from "@/components/footer-section";
 import { HeroSection } from "./_components/HeroSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-IN": "/",
+      "ml-IN": "/",
+      "x-default": "/",
+    },
+  },
+};
 
 export default function ThreeMonthFlagshipEntrepreneurship() {
   const jsonLd = {

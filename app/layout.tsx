@@ -1,6 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { mont, monument } from "@/fonts/fonts";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type React from "react";
 import "./globals.css";
 
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://oneinonemillion.com"),
   title: "One in One Million Value Driven School of Business",
   description:
-    "World’s first value-driven business school. Learn from the best CEOs • Forbes-Listed Builders • Fortune 500 consultants • Academicians. In Malayalam.",
+    "World's first value-driven business school in Malayalam. Learn from top CEOs, Forbes-listed builders & academicians.",
   keywords: [
     "Business School",
     "Entrepreneurship",
@@ -24,10 +24,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://oneinonemillion.com",
+
     siteName: "One in One Million Value Driven School of Business",
     title: "One in One Million Value Driven School of Business",
     description:
-      "World’s first value-driven business school. Learn from the best CEOs • Forbes-Listed Builders • Fortune 500 consultants • Academicians. In Malayalam.",
+      "World's first value-driven business school in Malayalam. Learn from top CEOs, Forbes-listed builders & academicians.",
     images: [
       {
         url: "/web-app-manifest-512x512.png", // Fallback, consider adding a specific OG image later
@@ -41,9 +42,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "One in One Million Value Driven School of Business",
     description:
-      "World’s first value-driven business school. Learn from the best CEOs • Forbes-Listed Builders • Fortune 500 consultants • Academicians. In Malayalam.",
+      "World's first value-driven business school in Malayalam. Learn from top CEOs, Forbes-listed builders & academicians.",
     images: ["/web-app-manifest-512x512.png"],
   },
+
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
