@@ -9,16 +9,20 @@ export default function FooterSection() {
             <div className="font-mont text-center text-xl leading-4 font-semibold">
               {" "}
               <Image
-                src="/1in1mLogoWhite.svg"
-                alt="Next.js logo"
-                width={80}
-                height={20}
+                src="/1in1million_Logo.webp"
+                alt="One in One Million"
+                width={200}
+                height={73}
                 priority
               />
             </div>
           </div>
           <div className="text-muted-foreground font-mont text-sm leading-[18px] font-medium">
-            Be the One in a Million with Values.
+            World’s first value-driven business school. <br />
+            Learn from the best CEOs <br />
+            • Forbes-Listed Builders <br />• Fortune 500 consultants <br />•
+            Academicians.
+            <br /> In Malayalam.
           </div>
 
           <div className="flex items-start justify-start gap-4">
