@@ -23,8 +23,9 @@ export default function FooterSection() {
 
           <div className="flex items-start justify-start gap-4">
             <a
-              href="https://www.instagram.com/1in1m.club/"
+              href="https://www.instagram.com/1in1m.business.school/"
               className="flex size-6 items-center justify-center"
+              target="_blank"
             >
               <FaInstagram />
             </a>
