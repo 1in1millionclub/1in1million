@@ -10,7 +10,7 @@ export default function FooterSection() {
               {" "}
               <Image
                 src="/1in1million_Logo.webp"
-                alt="One in One Million"
+                alt="1in1Million Value Driven School of Business Logo"
                 width={200}
                 height={73}
                 priority

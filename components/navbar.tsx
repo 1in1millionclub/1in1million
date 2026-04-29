@@ -8,7 +8,7 @@ export default function NavBar() {
       <div className="bg-background relative z-30 flex h-fit w-fit items-center justify-center gap-4 overflow-hidden rounded-[50px] px-8 py-1.5 backdrop-blur-sm sm:h-11 sm:max-w-[calc(100%-48px)] sm:px-4 sm:py-2 sm:pr-3 md:h-12 md:max-w-[calc(100%-64px)] md:px-4 lg:w-[700px] lg:max-w-[700px]">
         <Image
           src="/1in1million_Logo.webp"
-          alt="1in1 Million"
+          alt="1in1Million Value Driven School of Business Logo"
           width={150}
           height={20}
           priority
