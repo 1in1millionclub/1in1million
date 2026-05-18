@@ -24,6 +24,7 @@ import {
   Building,
   Calendar,
   ChevronDown,
+  Download,
   Loader2,
   Lock,
   Search,
@@ -115,6 +116,75 @@ export default function BusinessResponsesPage() {
       r.industry?.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
+  const handleExportCSV = () => {
+    if (filteredResponses.length === 0) return;
+
+    const headers = [
+      "Date Submitted",
+      "Full Name",
+      "Company Name",
+      "Industry",
+      "Primary Involvement",
+      "Years Operating",
+      "Locations",
+      "Team Size",
+      "Multiple Businesses",
+      "Multiple Businesses Details",
+      "Primary Business to Scale",
+      "Revenue Range",
+      "Business Stage",
+      "Areas to Improve",
+      "Growth Blockers",
+      "Expected Outcome",
+      "Open to Involvement",
+      "Expected Support",
+      "Investment Range",
+    ];
+
+    const csvContent = [
+      headers.join(","),
+      ...filteredResponses.map((res) => {
+        const row = [
+          format(new Date(res.created_at), "yyyy-MM-dd"),
+          res.full_name,
+          res.company_name,
+          res.industry,
+          res.primary_involvement,
+          res.years_operating,
+          res.locations,
+          res.team_size,
+          res.multiple_businesses ? "YES" : "NO",
+          res.multiple_businesses_details || "",
+          res.primary_business_to_scale,
+          res.revenue_range,
+          res.business_stage,
+          res.areas_to_improve.join("; "),
+          res.growth_blockers,
+          res.expected_outcome,
+          res.open_to_involvement ? "YES" : "NO",
+          res.expected_support,
+          res.investment_range,
+        ];
+        return row
+          .map((cell) => `"${String(cell).replace(/"/g, '""')}"`)
+          .join(",");
+      }),
+    ].join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute(
+      "download",
+      `business_assessments_${format(new Date(), "yyyy-MM-dd")}.csv`,
+    );
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   if (!isHydrated) {
     return (
       <div className="flex min-h-screen items-center justify-center">
@@ -178,6 +248,7 @@ export default function BusinessResponsesPage() {
               <p className="text-muted-foreground">
                 Reviewing strategic assessments from business leaders.
               </p>
+
               <Button
                 variant="outline"
                 size="sm"
@@ -188,7 +259,7 @@ export default function BusinessResponsesPage() {
               </Button>
             </div>
           </div>
-          <div className="relative w-full md:w-80">
+          <div className="flex w-full items-center justify-between gap-4">
             <InputGroup>
               <InputGroupInput
                 type="text"
@@ -200,6 +271,15 @@ export default function BusinessResponsesPage() {
                 <Search />
               </InputGroupAddon>
             </InputGroup>
+            <Button
+              variant="outline"
+              onClick={handleExportCSV}
+              disabled={filteredResponses.length === 0}
+              className="w-fit"
+            >
+              CSV
+              <Download className="h-4 w-4" />
+            </Button>
           </div>
 
           {loading ? (
@@ -295,7 +375,7 @@ export default function BusinessResponsesPage() {
                               {/* Quick Stats Grid */}
                               <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                                 <div className="space-y-1">
-                                  <p className="text-muted-foreground text-xs uppercase tracking-wider">
+                                  <p className="text-muted-foreground text-xs tracking-wider uppercase">
                                     Revenue
                                   </p>
                                   <p className="font-medium">
@@ -303,13 +383,13 @@ export default function BusinessResponsesPage() {
                                   </p>
                                 </div>
                                 <div className="space-y-1">
-                                  <p className="text-muted-foreground text-xs uppercase tracking-wider">
+                                  <p className="text-muted-foreground text-xs tracking-wider uppercase">
                                     Team Size
                                   </p>
                                   <p className="font-medium">{res.team_size}</p>
                                 </div>
                                 <div className="space-y-1">
-                                  <p className="text-muted-foreground text-xs uppercase tracking-wider">
+                                  <p className="text-muted-foreground text-xs tracking-wider uppercase">
                                     Years Active
                                   </p>
                                   <p className="font-medium">
@@ -317,7 +397,7 @@ export default function BusinessResponsesPage() {
                                   </p>
                                 </div>
                                 <div className="space-y-1">
-                                  <p className="text-muted-foreground text-xs uppercase tracking-wider">
+                                  <p className="text-muted-foreground text-xs tracking-wider uppercase">
                                     Stage
                                   </p>
                                   <p className="font-medium">
