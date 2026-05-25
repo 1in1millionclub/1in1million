@@ -37,6 +37,8 @@ interface Response {
   created_at: string;
   full_name: string;
   company_name: string;
+  company_website: string | null;
+  company_social: string | null;
   industry: string;
   primary_involvement: string;
   years_operating: string;
@@ -123,6 +125,8 @@ export default function BusinessResponsesPage() {
       "Date Submitted",
       "Full Name",
       "Company Name",
+      "Company Website",
+      "Company Social",
       "Industry",
       "Primary Involvement",
       "Years Operating",
@@ -148,6 +152,8 @@ export default function BusinessResponsesPage() {
           format(new Date(res.created_at), "yyyy-MM-dd"),
           res.full_name,
           res.company_name,
+          res.company_website || "",
+          res.company_social || "",
           res.industry,
           res.primary_involvement,
           res.years_operating,
@@ -405,6 +411,33 @@ export default function BusinessResponsesPage() {
                                   </p>
                                 </div>
                               </div>
+
+                              {(res.company_website || res.company_social) && (
+                                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                                  {res.company_website && (
+                                    <div className="space-y-1">
+                                      <p className="text-muted-foreground text-xs tracking-wider uppercase">
+                                        Website
+                                      </p>
+                                      <p className="font-medium break-all">
+                                        <a href={res.company_website.startsWith('http') ? res.company_website : `https://${res.company_website}`} target="_blank" rel="noreferrer" className="text-[#FE6168] hover:underline">
+                                          {res.company_website}
+                                        </a>
+                                      </p>
+                                    </div>
+                                  )}
+                                  {res.company_social && (
+                                    <div className="space-y-1">
+                                      <p className="text-muted-foreground text-xs tracking-wider uppercase">
+                                        Social / LinkedIn
+                                      </p>
+                                      <p className="font-medium break-all">
+                                        {res.company_social}
+                                      </p>
+                                    </div>
+                                  )}
+                                </div>
+                              )}
 
                               <div className="space-y-3">
                                 <h4 className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">

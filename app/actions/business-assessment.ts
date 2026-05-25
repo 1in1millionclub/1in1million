@@ -6,6 +6,8 @@ import { revalidatePath } from "next/cache";
 export async function submitBusinessAssessment(values: {
   full_name: string;
   company_name: string;
+  company_website?: string;
+  company_social?: string;
   industry: string;
   primary_involvement: string;
   years_operating: string;

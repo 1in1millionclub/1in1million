@@ -37,6 +37,8 @@ const AREAS_TO_IMPROVE = [
 const formSchema = z.object({
   full_name: z.string().min(2, "Name must be at least 2 characters"),
   company_name: z.string().min(2, "Company Name is required"),
+  company_website: z.string().optional(),
+  company_social: z.string().optional(),
   industry: z.string().min(2, "Industry is required"),
   primary_involvement: z.string().min(2, "Primary involvement is required"),
   years_operating: z.string().min(1, "Years operating is required"),
@@ -107,6 +109,8 @@ export default function BusinessAssessmentPage() {
     defaultValues: {
       full_name: "",
       company_name: "",
+      company_website: "",
+      company_social: "",
       industry: "",
       primary_involvement: "",
       years_operating: "",
@@ -248,6 +252,48 @@ export default function BusinessAssessmentPage() {
                               id="company_name"
                               aria-invalid={fieldState.invalid}
                               placeholder="Enter your company name"
+                            />
+                            {fieldState.invalid && (
+                              <FieldError errors={[fieldState.error]} />
+                            )}
+                          </Field>
+                        )}
+                      />
+
+                      <Controller
+                        name="company_website"
+                        control={form.control}
+                        render={({ field, fieldState }) => (
+                          <Field data-invalid={fieldState.invalid}>
+                            <FieldLabel htmlFor="company_website">
+                              Company Website
+                            </FieldLabel>
+                            <Input
+                              {...field}
+                              id="company_website"
+                              aria-invalid={fieldState.invalid}
+                              placeholder="E.g. https://example.com"
+                            />
+                            {fieldState.invalid && (
+                              <FieldError errors={[fieldState.error]} />
+                            )}
+                          </Field>
+                        )}
+                      />
+
+                      <Controller
+                        name="company_social"
+                        control={form.control}
+                        render={({ field, fieldState }) => (
+                          <Field data-invalid={fieldState.invalid}>
+                            <FieldLabel htmlFor="company_social">
+                              Company LinkedIn/Instagram ID
+                            </FieldLabel>
+                            <Input
+                              {...field}
+                              id="company_social"
+                              aria-invalid={fieldState.invalid}
+                              placeholder="E.g. @company or linkedin.com/company/..."
                             />
                             {fieldState.invalid && (
                               <FieldError errors={[fieldState.error]} />
@@ -586,7 +632,10 @@ export default function BusinessAssessmentPage() {
                                   checked={field.value?.includes(area)}
                                   onCheckedChange={(checked) => {
                                     return checked
-                                      ? field.onChange([...(field.value || []), area])
+                                      ? field.onChange([
+                                          ...(field.value || []),
+                                          area,
+                                        ])
                                       : field.onChange(
                                           field.value?.filter(
                                             (value) => value !== area,

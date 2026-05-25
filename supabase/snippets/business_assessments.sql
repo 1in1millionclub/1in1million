@@ -3,6 +3,8 @@ CREATE TABLE business_assessments (
   created_at TIMESTAMPTZ DEFAULT now(),
   full_name TEXT NOT NULL,
   company_name TEXT NOT NULL,
+  company_website TEXT,
+  company_social TEXT,
   industry TEXT NOT NULL,
   primary_involvement TEXT NOT NULL,
   years_operating TEXT NOT NULL,
