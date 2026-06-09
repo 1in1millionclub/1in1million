@@ -1,4 +1,5 @@
 import FooterSection from "@/components/footer-section";
+import { FAQSection } from "./_components/FAQSection";
 import { HeroSection } from "./_components/HeroSection";
 import type { Metadata } from "next";
 
@@ -33,6 +34,7 @@ export default function ThreeMonthFlagshipEntrepreneurship() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
+      <FAQSection />
       <FooterSection />
     </div>
   );
