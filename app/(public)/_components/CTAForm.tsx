@@ -62,7 +62,7 @@ export function CTAForm({
 *Expectations:* ${formData.expectations}`;
 
       const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/918129680503?text=${encodedMessage}`;
+      const whatsappUrl = `https://wa.me/9567480503?text=${encodedMessage}`;
 
       window.open(whatsappUrl, "_blank");
       onSuccess?.();
